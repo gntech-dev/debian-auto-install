@@ -120,7 +120,7 @@ fi
 # sudo configuration for admin user
 # ---------------------------------------------------------------------------
 
-if id -u admin &>/dev/null 2>&1; then
+if id -u admin &>/dev/null; then
     log "Ensuring admin is in sudoers..."
     usermod -aG sudo admin 2>/dev/null || true
 fi

@@ -134,13 +134,13 @@ if ! dpkg -l ifupdown 2>/dev/null | grep -q '^ii'; then
 fi
 
 # Disable systemd-networkd if it would conflict with ifupdown
-if systemctl is-enabled systemd-networkd &>/dev/null 2>&1; then
+if systemctl is-enabled systemd-networkd &>/dev/null; then
     log "Disabling systemd-networkd (using ifupdown instead)..."
     systemctl disable systemd-networkd 2>/dev/null || true
 fi
 
 # Disable NetworkManager if present (server installs should not use it)
-if systemctl is-enabled NetworkManager &>/dev/null 2>&1; then
+if systemctl is-enabled NetworkManager &>/dev/null; then
     log "Disabling NetworkManager (server install)..."
     systemctl disable NetworkManager 2>/dev/null || true
 fi

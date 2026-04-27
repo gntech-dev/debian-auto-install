@@ -28,7 +28,7 @@ fi
 # Create snapper config for root
 # ---------------------------------------------------------------------------
 
-if snapper -c root list &>/dev/null 2>&1; then
+if snapper -c root list &>/dev/null; then
     log "Snapper config 'root' already exists – skipping creation"
 else
     log "Creating snapper config for /"
