@@ -12,7 +12,7 @@ apt install -y \
   ca-certificates snapper inotify-tools rsync make gawk || true
 
 ### Hostname
-echo "G1" > /etc/hostname
+echo "VM" > /etc/hostname
 
 cat > /etc/hosts <<'EOF'
 127.0.0.1       localhost
@@ -39,7 +39,7 @@ iface enp1s0 inet manual
 # VLAN 20
 auto enp1s0.20
 iface enp1s0.20 inet static
-        address 10.0.20.30/24
+        address 10.0.20.35/24
         gateway 10.0.20.1
         dns-nameservers 10.0.20.1
         dns-search GNTECH.ME
