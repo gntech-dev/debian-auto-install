@@ -9,7 +9,7 @@ echo "[GNTECH] Starting finalize script"
 apt update || true
 apt install -y \
   sudo curl git openssh-server ifupdown vlan btrfs-progs \
-  ca-certificates snapper inotify-tools rsync make gawk qemu-guest-agent || true
+  ca-certificates snapper inotify-tools rsync make gawk || true
 
 ### Hostname
 echo "VM" > /etc/hostname
